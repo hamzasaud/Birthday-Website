@@ -1,0 +1,68 @@
+.App {
+  min-height: 100vh;
+  position: relative;
+  background-image: 
+    radial-gradient(circle at 20% 50%, rgba(255, 209, 102, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(244, 162, 97, 0.1) 0%, transparent 50%),
+    url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect fill="%23FFF4E0" width="100" height="100"/><circle cx="10" cy="10" r="1" fill="%23FFD166" opacity="0.3"/><circle cx="50" cy="50" r="1" fill="%23F4A261" opacity="0.2"/><circle cx="90" cy="30" r="1" fill="%23FFD166" opacity="0.3"/><circle cx="30" cy="70" r="1" fill="%23F4A261" opacity="0.2"/></svg>');
+  background-size: cover, cover, 100px 100px;
+  background-attachment: fixed;
+}
+
+.section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 60px 20px;
+}
+
+.floating-music-btn {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #FFD166 0%, #F4A261 100%);
+  border: 3px solid #fff;
+  box-shadow: 0 10px 30px rgba(244, 162, 97, 0.5);
+  font-size: 1.8rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  z-index: 999;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.floating-music-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 15px 40px rgba(244, 162, 97, 0.7);
+}
+
+.floating-music-btn:active {
+  transform: scale(0.95);
+}
+
+@keyframes pulse {
+  0%, 100% {
+    box-shadow: 0 10px 30px rgba(244, 162, 97, 0.5);
+  }
+  50% {
+    box-shadow: 0 10px 30px rgba(244, 162, 97, 0.8), 0 0 0 10px rgba(255, 209, 102, 0.2);
+  }
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 40px 15px;
+  }
+
+  .floating-music-btn {
+    width: 50px;
+    height: 50px;
+    font-size: 1.5rem;
+    bottom: 20px;
+    right: 20px;
+  }
+}
