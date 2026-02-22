@@ -1,0 +1,404 @@
+.hero-section {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  animation: fadeInUp 1s ease-out;
+}
+
+.anime-decoration {
+  position: absolute;
+  font-size: 3rem;
+  animation: float 3s ease-in-out infinite;
+  opacity: 0.7;
+}
+
+.anime-decoration.top-left {
+  top: -50px;
+  left: -50px;
+  animation-delay: 0s;
+}
+
+.anime-decoration.top-right {
+  top: -50px;
+  right: -50px;
+  animation-delay: 0.5s;
+}
+
+.anime-decoration.bottom-left {
+  bottom: -50px;
+  left: -50px;
+  animation-delay: 1s;
+}
+
+.anime-decoration.bottom-right {
+  bottom: -50px;
+  right: -50px;
+  animation-delay: 1.5s;
+}
+
+.hero-illustration {
+  margin-bottom: 30px;
+}
+
+.illustration-placeholder {
+  width: 200px;
+  height: 200px;
+  margin: 0 auto;
+  position: relative;
+  animation: bounce 2s ease-in-out infinite;
+}
+
+.anime-girl {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.head {
+  width: 120px;
+  height: 120px;
+  background: linear-gradient(135deg, #FFE8CC 0%, #FFD9B3 100%);
+  border-radius: 50%;
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  box-shadow: 0 10px 30px rgba(244, 162, 97, 0.3);
+  border: 3px solid #F4A261;
+}
+
+.face {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.eye {
+  width: 12px;
+  height: 18px;
+  background: #5D4E37;
+  border-radius: 50%;
+  position: absolute;
+  top: 45px;
+  animation: blink 4s infinite;
+}
+
+.eye.left {
+  left: 30px;
+}
+
+.eye.right {
+  right: 30px;
+}
+
+.blush {
+  width: 20px;
+  height: 15px;
+  background: #FFB4A2;
+  border-radius: 50%;
+  position: absolute;
+  top: 60px;
+  opacity: 0.6;
+}
+
+.blush.left-blush {
+  left: 15px;
+}
+
+.blush.right-blush {
+  right: 15px;
+}
+
+.mouth {
+  width: 30px;
+  height: 15px;
+  border: 2px solid #5D4E37;
+  border-top: none;
+  border-radius: 0 0 30px 30px;
+  position: absolute;
+  bottom: 35px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.body {
+  width: 100px;
+  height: 60px;
+  background: linear-gradient(135deg, #FFD166 0%, #F4A261 100%);
+  border-radius: 50px 50px 0 0;
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  box-shadow: 0 5px 20px rgba(244, 162, 97, 0.3);
+}
+
+.crown {
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 2.5rem;
+  animation: spin 3s linear infinite;
+}
+
+.hero-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 4rem;
+  font-weight: 900;
+  color: #5D4E37;
+  margin: 20px 0;
+  line-height: 1.2;
+  text-shadow: 3px 3px 0px #FFD166, 6px 6px 0px rgba(244, 162, 97, 0.3);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.title-line {
+  display: block;
+}
+
+.name-highlight {
+  background: linear-gradient(135deg, #FFD166 0%, #F4A261 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  display: inline-block;
+  animation: glow 2s ease-in-out infinite;
+}
+
+.hero-subtitle {
+  font-size: 1.5rem;
+  color: #8B7355;
+  margin: 20px 0 40px;
+  font-weight: 300;
+  font-style: italic;
+}
+
+.surprise-button {
+  background: linear-gradient(135deg, #FFD166 0%, #F4A261 100%);
+  color: #5D4E37;
+  border: none;
+  padding: 18px 40px;
+  font-size: 1.3rem;
+  font-weight: 700;
+  border-radius: 50px;
+  cursor: pointer;
+  box-shadow: 0 10px 30px rgba(244, 162, 97, 0.4);
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: 'Poppins', sans-serif;
+  position: relative;
+  overflow: hidden;
+}
+
+.surprise-button::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.5);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s, height 0.6s;
+}
+
+.surprise-button:hover::before {
+  width: 300px;
+  height: 300px;
+}
+
+.surprise-button:hover {
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 15px 40px rgba(244, 162, 97, 0.6);
+}
+
+.surprise-button.surprised {
+  animation: shake 0.5s ease-in-out;
+}
+
+.button-text,
+.button-icon {
+  position: relative;
+  z-index: 1;
+}
+
+.button-icon {
+  font-size: 1.5rem;
+  animation: wiggle 1s ease-in-out infinite;
+}
+
+.scroll-indicator {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  animation: fadeIn 2s ease-out 1s both;
+}
+
+.mouse {
+  width: 30px;
+  height: 50px;
+  border: 3px solid #F4A261;
+  border-radius: 20px;
+  position: relative;
+}
+
+.wheel {
+  width: 4px;
+  height: 10px;
+  background: #F4A261;
+  border-radius: 2px;
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: scroll 1.5s ease-in-out infinite;
+}
+
+.scroll-indicator p {
+  font-size: 0.9rem;
+  color: #8B7355;
+  font-weight: 300;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes blink {
+  0%, 90%, 100% {
+    height: 18px;
+  }
+  95% {
+    height: 2px;
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: translateX(-50%) rotate(0deg);
+  }
+  100% {
+    transform: translateX(-50%) rotate(360deg);
+  }
+}
+
+@keyframes glow {
+  0%, 100% {
+    filter: drop-shadow(0 0 10px rgba(255, 209, 102, 0.5));
+  }
+  50% {
+    filter: drop-shadow(0 0 20px rgba(244, 162, 97, 0.8));
+  }
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-10px) rotate(-5deg); }
+  75% { transform: translateX(10px) rotate(5deg); }
+}
+
+@keyframes wiggle {
+  0%, 100% { transform: rotate(0deg); }
+  25% { transform: rotate(-10deg); }
+  75% { transform: rotate(10deg); }
+}
+
+@keyframes scroll {
+  0% {
+    opacity: 1;
+    top: 10px;
+  }
+  100% {
+    opacity: 0;
+    top: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 2.5rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.2rem;
+  }
+
+  .surprise-button {
+    font-size: 1.1rem;
+    padding: 15px 30px;
+  }
+
+  .anime-decoration {
+    font-size: 2rem;
+  }
+
+  .illustration-placeholder {
+    width: 150px;
+    height: 150px;
+  }
+
+  .head {
+    width: 90px;
+    height: 90px;
+  }
+
+  .body {
+    width: 75px;
+    height: 45px;
+  }
+}
