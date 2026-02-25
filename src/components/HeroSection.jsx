@@ -70,7 +70,7 @@ function HeroSection() {
 
         <h1 className="hero-title">
           <span className="title-line">Happy 17th Birthday,</span>
-          <span className="name-highlight">[Her Name]!</span>
+          <span className="name-highlight">Bunga!</span>
         </h1>
         
         <p className="hero-subtitle">
