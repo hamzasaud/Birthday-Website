@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './InteractiveButtons.css';
 
-function InteractiveButtons({ openModal, musicPlaying, toggleMusic }) {
+function InteractiveButtons({ openModal, specialMusicPlaying, setSpecialMusicPlaying, specialAudioRef }) {
   const awesomeReasons = (
     <div className="modal-content-wrapper">
       <h2>Why You're Absolutely Awesome ✨</h2>
@@ -55,22 +55,44 @@ function InteractiveButtons({ openModal, musicPlaying, toggleMusic }) {
     </div>
   );
 
+  useEffect(() => {
+    specialAudioRef.current = new Audio('/special-song.mp3');
+    specialAudioRef.current.loop = true;
+    specialAudioRef.current.volume = 0.6;
+
+    return () => {
+      if (specialAudioRef.current) {
+        specialAudioRef.current.pause();
+        specialAudioRef.current = null;
+      }
+    };
+  }, [specialAudioRef]);
+
   const handleMusicClick = () => {
-    toggleMusic();
+    if (specialAudioRef.current) {
+      if (specialMusicPlaying) {
+        specialAudioRef.current.pause();
+        setSpecialMusicPlaying(false);
+      } else {
+        specialAudioRef.current.play();
+        setSpecialMusicPlaying(true);
+      }
+    }
+
     const musicContent = (
       <div className="modal-content-wrapper music-content">
-        <h2>{musicPlaying ? '🎵 Music Playing!' : '🎵 Music Paused'}</h2>
+        <h2>{specialMusicPlaying ? '🎵 Special Song Playing!' : '🎵 Play Special Song'}</h2>
         <div className="music-player">
-          <div className="vinyl-record">
+          <div className={`vinyl-record ${specialMusicPlaying ? 'spinning' : ''}`}>
             <div className="vinyl-center"></div>
           </div>
           <p className="music-note">
-            {musicPlaying 
-              ? "Imagine your favorite song playing right now! 🎶" 
-              : "Click 'Play Music' again to resume! 🎵"}
+            {specialMusicPlaying 
+              ? "Enjoy this special song just for you! 🎶" 
+              : "Click the button again to play! 🎵"}
           </p>
           <p className="music-hint">
-            (Add your favorite birthday song file to make this interactive!)
+            This is your special birthday song!
           </p>
         </div>
       </div>
@@ -114,7 +136,7 @@ function InteractiveButtons({ openModal, musicPlaying, toggleMusic }) {
           className="interactive-btn btn-music"
           onClick={handleMusicClick}
         >
-          <span className="btn-icon">{musicPlaying ? '⏸️' : '🎵'}</span>
+          <span className="btn-icon">{specialMusicPlaying ? '⏸️' : '🎵'}</span>
           <span className="btn-text">Play Music</span>
           <div className="btn-shine"></div>
         </button>
