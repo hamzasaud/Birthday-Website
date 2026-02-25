@@ -1,18 +1,20 @@
 import React, { useState, useEffect, useRef } from 'react';
 import './App.css';
-import HeroSection from './components/HeroSection';
-import InteractiveButtons from './components/InteractiveButtons';
-import Gallery from './components/Gallery';
-import AgeCounter from './components/AgeCounter';
-import FinalMessage from './components/FinalMessage';
-import FloatingStars from './components/FloatingStars';
-import Modal from './components/Modal';
+import HeroSection from './components/HeroSection.jsx';
+import InteractiveButtons from './components/InteractiveButtons.jsx';
+import Gallery from './components/Gallery.jsx';
+import AgeCounter from './components/AgeCounter.jsx';
+import FinalMessage from './components/FinalMessage.jsx';
+import FloatingStars from './components/FloatingStars.jsx';
+import Modal from './components/Modal.jsx';
 
 function App() {
   const [modalContent, setModalContent] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [musicPlaying, setMusicPlaying] = useState(false);
+  const [specialMusicPlaying, setSpecialMusicPlaying] = useState(false);
   const audioRef = useRef(null);
+  const specialAudioRef = useRef(null);
 
   useEffect(() => {
     audioRef.current = new Audio('/birthday-song.mp3');
@@ -69,8 +71,9 @@ function App() {
       
       <InteractiveButtons 
         openModal={openModal} 
-        musicPlaying={musicPlaying}
-        toggleMusic={toggleMusic}
+        specialMusicPlaying={specialMusicPlaying}
+        setSpecialMusicPlaying={setSpecialMusicPlaying}
+        specialAudioRef={specialAudioRef}
       />
       
       <Gallery />
