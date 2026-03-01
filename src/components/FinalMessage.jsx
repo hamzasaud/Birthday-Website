@@ -45,6 +45,7 @@ function FinalMessage() {
           
           <div className="message-content">
             <h2 className="message-title">A Special Note For You 💛</h2>
+			  
               <div className="handwritten-text">
               <p>
                 Hi bung, selamat bertambah menjadi tua sedikit, yaitu 17. Semoga selalu menjadi wibu sejati dan tetap sehat.
