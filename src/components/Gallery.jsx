@@ -1,42 +1,50 @@
 import React from 'react';
 import './Gallery.css';
 
+// Import your images here
+import photo1 from '../images/photo1.jpg';
+import photo2 from '../images/photo2.jpg';
+import photo3 from '../images/photo3.jpg';
+import photo4 from '../images/photo4.jpg';
+import photo5 from '../images/photo5.jpg';
+import photo6 from '../images/photo6.jpg';
+
 function Gallery() {
   const galleryItems = [
     {
       id: 1,
       caption: "Anime vibes forever 🌸",
-      emoji: "🎌",
+      image: photo1,
       color: "#FFD166"
     },
     {
       id: 2,
       caption: "Vintage memories 📷",
-      emoji: "📸",
+      image: photo2,
       color: "#F4A261"
     },
     {
       id: 3,
       caption: "Golden moments ✨",
-      emoji: "⭐",
+      image: photo3,
       color: "#FFE8CC"
     },
     {
       id: 4,
       caption: "Retro aesthetic 🌻",
-      emoji: "🌼",
+      image: photo4,
       color: "#FFD9B3"
     },
     {
       id: 5,
       caption: "Kawaii dreams 💫",
-      emoji: "🌙",
+      image: photo5,
       color: "#FFB4A2"
     },
     {
       id: 6,
       caption: "Sweet seventeen 🎂",
-      emoji: "🎉",
+      image: photo6,
       color: "#FFD166"
     }
   ];
@@ -54,13 +62,12 @@ function Gallery() {
             style={{ animationDelay: `${index * 0.1}s` }}
           >
             <div className="polaroid">
-              <div className="photo-frame" style={{ background: `linear-gradient(135deg, ${item.color} 0%, #FFF4E0 100%)` }}>
-                <div className="photo-placeholder">
-                  <span className="photo-emoji">{item.emoji}</span>
-                  <div className="photo-overlay">
-                    <p className="overlay-text">Add your photo here!</p>
-                  </div>
-                </div>
+              <div className="photo-frame">
+                <img 
+                  src={item.image} 
+                  alt={item.caption}
+                  className="gallery-photo"
+                />
               </div>
               <div className="polaroid-caption">
                 <p>{item.caption}</p>
