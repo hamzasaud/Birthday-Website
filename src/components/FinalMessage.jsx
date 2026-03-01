@@ -45,17 +45,17 @@ function FinalMessage() {
           
           <div className="message-content">
             <h2 className="message-title">A Special Note For You 💛</h2>
-            
-            <div className="handwritten-text">
+              <div className="handwritten-text">
               <p>
-                May your 17th year be full of anime marathons, 
-                laughter, and golden memories.
+                Hi bung, selamat bertambah menjadi tua sedikit, yaitu 17. Semoga selalu menjadi wibu sejati dan tetap sehat.
+		Minum yg banyak dan berhenti menggoyangkan kaki, sedikit tak suka
               </p>
               <p>
-                Keep being the amazing, unique, and wonderful person you are.
+                Oke itulah surat mini dari ku, semoga suka ya
+		Dan HAPUS ML now, jangan mabar sama si 'itu', itu aja dari ku yg imut ini, terima kasihh,
               </p>
               <p>
-                The world is brighter with you in it! ✨
+                HBD ✨
               </p>
             </div>
 
