@@ -46,9 +46,9 @@ function InteractiveButtons({ openModal, specialMusicPlaying, setSpecialMusicPla
       <h2>Secret Message Unlocked 🔓</h2>
       <div className="secret-box">
         <p className="secret-text typewriter">
-          You are loved more than you know, appreciated more than you realize, 
-          and you deserve all the happiness in the world. Never forget how special you are! 
-          Keep shining bright, because the world needs your light. 💫
+          Kamu dicintai lebih dari yang kamu tahu, dihargai lebih dari yang kamu sadari, dan kamu pantas mendapatkan 
+	  semua kebahagiaan di dunia.Jangan pernah lupa betapa istimewanya dirimu! Teruslah bersinar terang, 
+	  karena dunia membutuhkan cahayamu. 💫
         </p>
         <p className="secret-signature">— Someone who thinks you're incredible</p>
       </div>
